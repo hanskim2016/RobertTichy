@@ -1,0 +1,17 @@
+.rgt_red {
+  border: 5px solid red;
+  border-radius: 2em;
+  padding: 1em;
+}
+.rgt_green {
+  border: 5px solid green;
+  border-radius: 2em;
+  padding: 1em;
+}
+.rgt_winner {
+  border: 5px dotted blue;
+  border-radius: 2em;
+  padding: 1em;
+}
+.btn { margin-left: .5rem;}
+.form-control {}
