@@ -22,6 +22,7 @@ def result():
     # about forms
     name = request.form['name']
     comments = request.form['comments']
+    comments = comments[0:120]
     lang_choice = request.form['language']
     location = request.form['location']
 
