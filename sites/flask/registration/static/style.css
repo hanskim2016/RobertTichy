@@ -1,0 +1,9 @@
+.aborder {
+  border: 2px solid blue;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+.errors {
+  display: block;
+  color: red;
+}

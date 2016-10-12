@@ -1,0 +1,86 @@
+<html>
+    <head>
+      <title>Form Test Index</title>
+      <meta charset="utf-8">
+      <meta name="description" content="Tool to Produce a 2-D Array">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" />
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='normalize.css') }}">
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+      <div class="container">
+        <h1>Create a Login</h1>
+        <h3>Join Today!</h3>
+        <div class="row">
+        <div class="col-sm-8 aborder">
+          <form action='/signup' method='post'>
+            <div class='row'>
+              <div class="col-sm-4">
+                <label for="first_name" class="control-label">First Name:</label>
+                <input class="form-control col-sm-4" type='text' name='first_name'
+                {% if errors %}
+                 value = "{{ session['first_name']}}"
+                {% else %}
+                 value = ''
+                {% endif %}
+                />
+              </div>
+              <div class="col-sm-4">
+                <label for="last_name" class="control-label">Last Name:</label>
+                <input class="form-control col-sm-4" type='text' name='last_name'
+                {% if errors %}
+                 value = "{{ session['last_name']}}"
+                {% else %}
+                 value = ''
+                {% endif %}
+                />
+              </div>
+            </div>
+            <div class='row'>
+              <div class="form-group">
+                <div class = "col-sm-8">
+                  <label for = "email_id" class = "col-sm-2">Email:</label>
+                  <input class = "form-control" type='text' name = 'email_id'
+                  {% if errors %}
+                   value = "{{ session['user_id']}}"
+                  {% else %}
+                   value = ''
+                  {% endif %}
+                  />
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <label for="pwd_1" class="col-sm-8 control-label">Password:</label>
+                  <input class="form-control col-sm-3" type='password' name='pwd_1'></input>
+                  <label for="pwd_2" class="col-sm-8 control-label">Verify Password:</label>
+                  <input class="form-control col-sm-3" type='password' name='pwd_2'></input>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+              <div class="form-group">
+                <div class="col-sm-8">
+                  <br />
+                  <button class="col-sm-offset-10 btn btn-primary" type='submit'>Register</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      </div>
+        <div class="errors col-sm-8">
+          {% if errors %}
+          {% for each in errors %}
+          <p>{{ each }}</p>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </body>
+</html>
