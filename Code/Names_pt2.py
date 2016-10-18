@@ -19,3 +19,5 @@ def printPerson(list):
 for userGroup,people in users.items():
     print userGroup
     printPerson(people)
+
+#this is very well done. You can save a tiny bit of typing by doing object['first_name'] instead of using .get, but it also will break if your data set loses those keys, so your choice seems justifiable to me. 	
